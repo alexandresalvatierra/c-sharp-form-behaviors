@@ -21,6 +21,7 @@ namespace FormBehavior
         {
             if (e.KeyCode == Keys.Enter)
             {
+                Console.WriteLine("Pressed enter");
                 SendKeys.Send("{TAB}");
             }
         }
