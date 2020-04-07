@@ -1,6 +1,6 @@
 ﻿namespace FormBehavior
 {
-    partial class Form1
+    partial class Customer
     {
         /// <summary>
         /// Required designer variable.
@@ -229,11 +229,11 @@
             this.radioButton7.Text = "Orange";
             this.radioButton7.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 381);
+            this.ClientSize = new System.Drawing.Size(416, 381);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.panel1);
@@ -250,8 +250,8 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.KeyPreview = true;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Customer";
+            this.Text = "Customer";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
