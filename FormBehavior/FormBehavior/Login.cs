@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace FormBehavior
 {
+
     public partial class Login : Form
     {
         public Login()
@@ -32,7 +33,8 @@ namespace FormBehavior
             {
                 if (txtUser.Text == "ale" && txtPassword.Text == "123")
                 {
-                    Customer frm = new Customer();
+                    Main frm = new Main();
+
                     frm.Show();
                     //this.Close();
                 }
