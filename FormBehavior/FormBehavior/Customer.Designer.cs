@@ -123,7 +123,7 @@
             // mktPostalCode
             // 
             this.mktPostalCode.Location = new System.Drawing.Point(52, 148);
-            this.mktPostalCode.Mask = "00000-L00";
+            this.mktPostalCode.Mask = "00000-000";
             this.mktPostalCode.Name = "mktPostalCode";
             this.mktPostalCode.Size = new System.Drawing.Size(100, 20);
             this.mktPostalCode.TabIndex = 4;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,13 @@ namespace FormBehavior
 {
     public partial class Customer : Form
     {
+        // XML
+        // JSON
+        // CSV
+        // XLS - !!!
+        static String path = AppDomain.CurrentDomain.BaseDirectory + "data";
+        static String file = path + "/Customer.txt";
+
         public Customer()
         {
             InitializeComponent();
@@ -39,7 +47,7 @@ namespace FormBehavior
             //if (txtName.Text == "") {
             //if (txtName.Text.Trim() == "") {
 
-
+            
             if ( String.IsNullOrWhiteSpace( txtName.Text ) )
             {
                 // MessageBox.Show("Name is required");
@@ -98,6 +106,34 @@ namespace FormBehavior
 
                 txtConPass.BackColor = Color.FromName("Window");
             }
+
+
+            bool checkDirExist = Directory.Exists(path);
+            //if (checkDirExist == false)
+            //if (!checkDirExist == true)
+            if (!checkDirExist)
+                Directory.CreateDirectory(path);
+            
+
+            String line = txtName.Text + "|" + txtEmail.Text + "|" + txtPass.Text + "|" + mktPostalCode.Text + "|" + mktCnpj.Text;
+
+            bool checkFileExist = File.Exists(file);
+
+            if (!checkFileExist)
+            {
+                using (StreamWriter sw = File.CreateText(file))
+                {
+                    sw.WriteLine(line);
+                }
+            }
+            else
+            {
+                using (StreamWriter sw = File.AppendText(file))
+                {
+                    sw.WriteLine(line);
+                }
+            }
+
 
         }
     }
