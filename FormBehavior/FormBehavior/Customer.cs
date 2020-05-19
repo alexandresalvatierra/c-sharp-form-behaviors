@@ -75,7 +75,7 @@ namespace FormBehavior
                 txtEmail.BackColor = Color.FromName("Window");
             }
 
-            mktPostalCode.Mask = "";
+            //mktPostalCode.Mask = "";
 
             if (mktPostalCode.Text == "     -")
             //if (mktPostalCode.Mask == mktPostalCode.Text)
@@ -135,6 +135,41 @@ namespace FormBehavior
             }
 
 
+        }
+
+        private void Customer_Load(object sender, EventArgs e)
+        {
+            if (File.Exists(file))
+            {
+                dgvCustomer.Rows.Clear();
+                using (StreamReader sr = new StreamReader(file))
+                {
+                    int line = 0;
+                    string ln;
+
+                    while ((ln = sr.ReadLine()) != null)
+                    {
+                        //Console.WriteLine(ln);
+                        //MessageBox.Show(ln);
+                        
+                        string[] fields = ln.Split('|');
+
+                        dgvCustomer.Rows.Add(fields[0], fields[1], fields[3], fields[4]);
+
+                        line++;
+                    }
+                    sr.Close();
+                    //Console.WriteLine("Encontradas " + totalLinhas + " linhas.");
+                    //MessageBox.Show("Encontradas " + line + " linhas.");
+                }
+            }
+            /*
+            else
+            {
+                MessageBox.Show("Nenhum Arquivo encontrado");
+            }
+            */
+       
         }
     }
 }
